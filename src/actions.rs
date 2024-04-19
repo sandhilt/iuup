@@ -1,11 +1,13 @@
 pub mod prelude {
     use std::collections::HashMap;
 
-    pub struct FindResult<'a> {
-        name: String,
-        version: Option<String>,
-        description: Option<&'a str>,
-    }
+    use crate::cli::prelude::CommandPkgMan;
+
+    // pub struct FindResult<'a> {
+    //     name: String,
+    //     version: Option<String>,
+    //     description: Option<&'a str>,
+    // }
     pub struct FilterForFind {
         name: String,
         version: Option<String>,
@@ -20,7 +22,7 @@ pub mod prelude {
         async fn install(&self, arg: ArgForInstall, options: OptionsForInstall) -> bool;
     }
     pub trait Find {
-        async fn find(&self, filter: FilterForFind) -> FindResult;
+        async fn find(&self, filter: FilterForFind) -> CommandPkgMan;
     }
 
     pub trait PackageManager: Default + Send + Sync + Install + Find {}

@@ -1,26 +1,25 @@
 pub mod prelude {
-    use crate::actions::prelude::{FilterForFind, Find, FindResult, PackageManager};
-
+    use crate::{actions::prelude::{FilterForFind, Find}, cli::prelude::CommandPkgMan};
 
     // Language Specific
-    struct Corepack {}
-    struct PiP {}
-    struct Cargo {}
+    pub struct Corepack {}
+    pub struct PiP {}
+    pub struct Cargo {}
 
-    struct BrewLinux {}
+    pub struct BrewLinux {}
 
-    struct BrewMacOS {}
-    struct Winget {}
-    struct NixOS {}
-    struct Pacman {}
+    pub struct BrewMacOS {}
+    pub struct Winget {}
+    pub struct NixOS {}
+    pub struct Pacman {}
 
-    struct DebianApt {}
+    pub struct DebianApt {}
 
-    struct UbuntuApt {}
-    struct UbuntuPPA {}
+    pub struct DPKG {}
+    pub struct UbuntuPPA {}
 
     impl Find for NixOS {
-        async fn find(&self, filter: FilterForFind) -> FindResult {
+        async fn find(&self, filter: FilterForFind) -> CommandPkgMan {
             todo!()
         }
     }

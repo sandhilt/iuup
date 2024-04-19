@@ -1,12 +1,12 @@
 pub mod prelude {
 
     #[derive(Debug)]
-    struct Command {
+    pub struct CommandPkgMan {
         content: String,
         options: Vec<String>,
     }
 
-    impl Command {
+    impl CommandPkgMan {
         pub fn new(content: String, options: Vec<String>) -> Self {
             Self { content, options }
         }
