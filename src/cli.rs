@@ -14,5 +14,9 @@ pub mod prelude {
         pub fn add_option(&mut self, option: String) {
             self.options.push(option);
         }
+
+        pub fn to_string(&self) -> String {
+            format!("{} {:?}", self.content, self.options)
+        }
     }
 }

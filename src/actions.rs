@@ -9,14 +9,14 @@ pub mod prelude {
     //     description: Option<&'a str>,
     // }
     pub struct FilterForFind {
-        name: String,
-        version: Option<String>,
+        pub name: String,
+        pub version: Option<String>,
     }
     pub struct ArgForInstall {
         name: String,
         version: Option<String>,
     }
-    type OptionsForInstall = HashMap<String, String>;
+    pub type OptionsForInstall = HashMap<String, String>;
 
     pub trait Install {
         async fn install(&self, arg: ArgForInstall, options: OptionsForInstall) -> bool;
